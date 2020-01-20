@@ -1,0 +1,19 @@
+﻿@using auctionfinal.DAL
+@model player[]
+@{
+    ViewBag.Title = "deleteplayer";
+}
+<h2>deleteplayer</h2>
+@{
+    foreach (player s in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="/auctionfinal/Admin/admin/delete?id=@s.playerid" class="thumbnail">
+                <img src="/auctionfinal/Admin/admin/display?id=@s.playerid"  />
+            </a>
+            <h6>@s.playername</h6>
+        </div>
+    }
+
+}
+

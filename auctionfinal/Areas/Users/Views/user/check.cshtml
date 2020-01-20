@@ -1,0 +1,40 @@
+﻿@using auctionfinal.DAL;
+@model player[]
+@{
+    ViewBag.Title = "check";
+}
+    <link href="content/bootstrap.min.css" rel="stylesheet">
+<h2>check</h2>
+@{
+    if (ViewData["signup"].Equals("true"))
+    {
+        <form action="/auctionfinal/Users/user/adduser">
+            <br>Enter user id<input type="number" id="userid" name="userid">
+            <br>Enter user name<input type="text" id="username" name="username">
+            <br>Enter password<input type="text" id="password" name="password">
+            <br><input type="submit" id="submit" name="submit" value="CREATE ACCOUNT">
+        </form>
+    }
+    else
+    {
+        if (ViewData["tested"].Equals("true"))
+        {
+            foreach (player s in Model)
+            {
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">     
+                    <a class="thumbnail">
+                        <img src="/auctionfinal/Admin/admin/display?id=@s.playerid"  class="img-rounded" alt="Cinque Terre"/>
+                        <h6>@s.playername</h6>
+                    </a>
+                </div>
+            }
+            <br>
+            <h2>YOU WILL GET NOTIFIED WHEN THE AUCTION IS ABOUT TO START....THANK YOU</h2>
+        }
+        else
+        {
+            <h1>PLEASE ENTER CORRECT DETAILS</h1>
+        }
+    }
+}

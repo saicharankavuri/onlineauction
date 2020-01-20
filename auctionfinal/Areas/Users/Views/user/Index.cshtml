@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@{ 
+    using (Html.BeginForm("check", "user",new { area="Users"}, FormMethod.Get))
+    {
+
+        <h1>LOGIN</h1>
+        <input type="number" placeholder="ENTER USERID" id="userid" name="userid" value=1><br />
+        <input type="text" placeholder="ENTER USER NAME" id="username" name="username"><br />
+        <input type="password" placeholder="ENTER PASSWORD" id="password" name="password"><br />
+        <input type="submit" id="submit" name="type" value="SUBMIT"><br />
+        <input type="submit" id="signup" name="type" value="SIGNUP">
+    }
+}
+

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+    
+<h2>PLEASE SELECT THE TYPE OF USER</h2>
+<center>
+@{
+    using (Html.BeginForm("Index", "admin", new { area = "Admin" }, FormMethod.Get))
+    {
+        <input type="submit" class="btn btn-info" id="admin" name="type" value="ADMIN">
+    }
+    <br/>
+    using (Html.BeginForm("Index", "user", new { area = "Users" }, FormMethod.Get))
+    {
+        <input type="submit"  class="btn btn-info" id="user" name="user" value="USER">
+    }
+}
+</center>

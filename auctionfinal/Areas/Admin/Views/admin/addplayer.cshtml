@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "addplayer";
+}
+
+<h2>addplayer</h2>
+
+@{
+    if (ViewData["data"].Equals("false"))
+    {
+        using (Html.BeginForm("addplayer", "admin", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="number" id="playerid" name="playerid"> <br />
+            <input type="text" id="playername" name="playername"> <br />
+            <input type="text" id="baseprice" name="baseprice">  <br />
+            <input type="file" name="photo" id="photo">
+            <input type="submit" id="submit" name="submit">
+        }
+    }
+    else
+    {
+        <h1>PLAYER DETAILS RECORDED</h1>
+        using (Html.BeginForm("addplayer", "admin", new { area = "Admin" }, FormMethod.Get))
+        {
+            <input type="submit" id="submit" name="submit" value="submit">
+        }
+    }
+    
+
+    }
+

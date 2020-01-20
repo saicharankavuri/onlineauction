@@ -1,0 +1,20 @@
+﻿@using auctionfinal.DAL
+@model player
+@{
+    ViewBag.Title = "editing";
+}
+
+<h2>editing</h2>
+@{
+
+    using (Html.BeginForm("edit", "admin",new { area="Admin"}, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="number" id="playerid" name="playerid" value=@Model.playerid><br />
+        <input type="text" id="playername" name="playername" value=@Model.playername><br />
+        <input type="text" id="baseprice" name="baseprice" value=@Model.baseprice><br />
+        <img src="/auctionfinal/Admin/admin/display?id=@Model.playerid" /><br />
+        <input type="file" id="photo" name="photo">
+        <input type="submit" id="button" name="button">
+    }
+}
+
